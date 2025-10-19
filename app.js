@@ -86,6 +86,62 @@ logoutBtn.addEventListener("click" , async () => {
 
 })
 
+// -----------<<< Gemini ai Handling >>>--------------
+
+const OPENAI_API_KEY = "";
+
+const ideaInput = document.getElementById("ideaInput");
+const generateBtn = document.getElementById("generateBtn");
+const aiText = document.getElementById("aiText");
+
+generateBtn.addEventListener("click", async () => {
+    const userIdea = ideaInput.value.trim();
+    if (!userIdea) {
+    alert("⚠️ Please enter your idea or topic!");
+    return;
+    }
+
+    aiText.innerHTML = "⏳ Generating AI-powered startup details...";
+
+    try {
+    const res = await fetch("url", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${OPENAI_API_KEY}`,
+        },
+        body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [
+            {
+            role: "system",
+            content: "You are a startup idea generator. Write a creative, short, and realistic startup description and summary based on user input.",
+            },
+            {
+            role: "user",
+            content: `Idea: ${userIdea}`,
+            },
+        ],
+        }),
+    });
+
+    if (!res.ok) {
+        const errMsg = await res.text();
+        aiText.innerHTML = "❌ Error: " + errMsg;
+        console.error("OpenAI Error:", errMsg);
+        return;
+    }
+
+    const data = await res.json();
+    const message = data.choices[0].message.content.trim();
+    aiText.innerHTML = `<strong>🚀 Startup Idea Summary:</strong><br>${message}`;
+    } catch (err) {
+    console.error("Fetch Error:", err);
+    aiText.innerHTML = "❌ Failed to connect to OpenAI API.";
+    }
+});
+
+
 // -----------<<< Check User Session on Page Load >>>--------------
 
 window.addEventListener("DOMContentLoaded", async () => {
