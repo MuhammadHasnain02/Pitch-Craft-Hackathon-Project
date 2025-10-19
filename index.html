@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Craft App</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="flex flex-col h-screen justify-between">
+    
+    <!-- ---<<< Registration Section [Authentication, Signup and Signin] >>>--- -->
+    
+    <div id="authSect" class="flex items-center h-screen justify-center">
+        <div class="relative">
+            <div class="absolute -top-2 -left-2 -right-2 -bottom-2 rounded-lg bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 shadow-lg animate-pulse"></div>
+                <div id="form-container" class="bg-white p-12 rounded-lg shadow-2xl w-100 relative z-10 transform transition duration-500 ease-in-out">
+                
+                <div class="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
+                
+                    <h2 class="flex flex-row justify-center text-2xl font-bold leading-tight text-black">
+                        <img src="logo.png" alt="Pitchcraft Logo" class="h-12 w-auto mr-2">
+                    </h2>
+                    <h2 class="text-center text-xl font-semibold leading-tight text-black">
+                        Sign in or Create an Account</h2>
+                    <p class="mt-2 text-center text-[13px] text-gray-600">
+                        Don't have an account? Create a free account</p>
+
+                    <form class="mt-8" method="POST" action="#">
+                        <div class="space-y-6">
+
+                            <div>
+                                <label class="text-base font-medium text-gray-900">
+                                    Email address
+                                </label>
+                                <div class="mt-2">
+                                    <input placeholder="Email" type="email" id="userEmail" class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"/>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <label class="text-base font-medium text-gray-900">
+                                        Password
+                                    </label>
+                                    <a id="forgetPassw" class="text-sm font-semibold text-black hover:underline" title="" href="#">
+                                        Forgot password?
+                                    </a>
+                                </div>
+                                <div class="relative mt-2">
+                                    <input id="userPassword" placeholder="Password" type="password" class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 pr-10 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1"/>
+                                    <i id="changIcon" class="fa-regular fa-eye-slash absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"></i>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row space-x-2">
+                                <button id="signupBtn" class="inline-flex w-full items-center justify-center rounded-lg bg-black px-3.5 py-2 font-semibold leading-7 text-white hover:cursor-pointer border-2 duration-600 hover:bg-white hover:text-black" type="button">
+                                    Signup
+                                </button>
+                                <button id="loginBtn" class="inline-flex w-full items-center justify-center rounded-lg bg-black px-3.5 py-2 font-semibold leading-7 text-white hover:cursor-pointer border-2 duration-600 hover:bg-white hover:text-black" type="button">
+                                    Login
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="mt-3 space-y-3">
+
+                        <button id="signinGoogle" class="relative inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:cursor-pointer hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none" type="button">
+                            <span class="mr-2 inline-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 533.5 544.3" width="25" height="25">
+                                    <path fill="#4285F4" d="M533.5 278.4c0-17.4-1.6-34.1-4.7-50.4H272.1v95.3h147.3c-6.4 34.7-25.9 64.1-55.2 83.8v68h89.2c52.2-48.1 80.1-119.1 80.1-196.7z"/>
+                                    <path fill="#34A853" d="M272.1 544.3c74.6 0 137-24.7 182.7-67.2l-89.2-68c-24.8 16.6-56.6 26.3-93.5 26.3-71.9 0-132.9-48.6-154.6-113.9h-92.3v71.6c45.3 89.5 138.7 151.2 247 151.2z"/>
+                                    <path fill="#FBBC05" d="M117.5 321.5c-10.9-32.8-10.9-68.2 0-101l-92.3-71.6C3.5 189.4 0 217.1 0 245.7s3.5 56.3 10.2 83.8l107.3-8z"/>
+                                    <path fill="#EA4335" d="M272.1 107.7c40.6 0 77 14 105.9 41.5l79.1-79.1C409.1 24.8 346.7 0 272.1 0 163.8 0 70.4 61.7 25.1 151.2l92.3 71.6C139.2 156.3 200.2 107.7 272.1 107.7z"/>
+                                </svg>
+
+                            </span>
+                            Sign in with Google
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ---<<< Main Section >>>--- -->
+    <section id="mainSect" class="hidden f lex flex-col h-screen justify-between">
+
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+
+                    <!-- Left: Logo -->
+                    <div class="">
+                        <span class="text-3xl font-bold text-purple-600">P</span>
+                    </div>
+
+                    <div class="flex items-center">
+                        <img src="logo.png" alt="Pitchcraft Logo" class="h-12 w-auto mr-2">
+                    </div>
+
+                    <!-- Right: Buttons -->
+                    <div id="menu" class="flex items-center space-x-4">
+                        <button id="logoutBtn"
+                          class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition hover:cursor-pointer">
+                          Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 mt-24 flex flex-col items-center px-4">
+            <div class="bg-white shadow-md rounded-2xl p-6 w-full max-w-2xl text-center">
+            <h1 class="text-2xl font-bold text-gray-800 mb-4">Share Your Idea 💡</h1>
+            <p class="text-gray-500 mb-6">Type your topic or suggestion below and get instant AI-powered details.</p>
+
+            <!-- Input -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <input id="ideaInput" type="text" placeholder="Enter your idea or topic..."
+                class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none" />
+                <button id="generateBtn"
+                class="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition hover:cursor-pointer">
+                Generate Details
+                </button>
+            </div>
+
+            <!-- AI Response Area -->
+            <div id="responseBox" class=" mt-6 p-4 bg-gray-100 rounded-lg text-left">
+                <h2 class="font-semibold text-purple-600 mb-2">AI Response:</h2>
+                <p id="aiText" class="text-gray-700 leading-relaxed"></p>
+            </div>
+            </div>
+        </main>
+
+    </section>
+
+
+    <!-- Toast Notification Div -->
+    <div id="toastDiv" class=""></div>
+    
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Custom .js File -->
+    <script src="app.js"></script>
+
+</body>
+</html>
